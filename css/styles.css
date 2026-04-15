@@ -209,6 +209,9 @@ h3{
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
 }
+.white-bg{
+    background: var(--color-white);
+}
 
 
 .vertical-divider
@@ -263,6 +266,9 @@ h3{
     width: 24px;
     height: 24px;
 }
+.hidden{
+    display: none;
+}
 .icon-button
 {
     position: relative;
@@ -314,6 +320,11 @@ aside {
     cursor: pointer;
 }
 
+.sidebar-logo{
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: var(--text-lg);
+}
 #logo, .nav-active-item
 {
     background: var(--color-blue-500);
@@ -394,19 +405,18 @@ header
     height: var(--header-height);
     margin-left: var(--nav-width);
     padding: 12px 24px;
-    background: var(--color-white);
     border-bottom: 1px solid var(--color-border);
     justify-content: space-between;
 }
 
-#search-container{
+.search-container{
     width: 100%;
     padding: 8px 20px;
 }
-#search-container svg{
+.search-container svg{
     color: var(--color-slate-500);
 }
-#search-container input
+.search-container input
 {
     width: 100%;
     border: none;
@@ -415,7 +425,7 @@ header
     font-size: var(--text-lg);
     color: var(--color-slate-700);
 }
-#search-container input::placeholder
+.search-container input::placeholder
 {
     color: var(--color-slate-400);
 }
@@ -777,7 +787,7 @@ main
         display: inline-block;
     }
 
-    #search-container
+    #global-search-form
     {
         display: none   ;
     }
