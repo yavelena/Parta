@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +7,140 @@
     <title>Dashboard | Parta Inventory</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="inventory.html">Inventory Search</a></li>
-                <li><a href="part-details.html">Part Details</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Welcome to Parta Inventory</h1>
-        <p>This is the dashboard for managing electronic components inventory.</p>
-        <p>Use the navigation above to search inventory or view part details.</p>
-    </main>
+    <div class="container">
+
+        <aside id="sidebar">
+
+            <div class="sidebar-header flex-row flex-horizontal-center">
+                <div class="sidebar-logo flex-row flex-horizontal-center gap-2">
+                    <div id="logo" class="blue-bg flex-center">PI</div><span class="logo-text">Parta Inventory</span>
+                </div>
+
+                <a href="#" id="menu-close" class="menu-close flex-center" aria-label="Close menu">
+                    <svg class="icon-xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18"></path>
+                        <path d="m6 6 12 12"></path>
+                    </svg>
+                </a>
+            </div>
+            
+            <nav class="flex-col">
+                <a href="index.html" id="dashboard" class="nav-active-item">
+                    <svg class="icon-base" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                        <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                        <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                        <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                    </svg> Dashboard
+                </a>
+                <a href="inventory.html" id="inventory">
+                    <svg class="icon-base"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
+                        <path d="M12 22V12"></path>
+                        <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                        <path d="m7.5 4.27 9 5.15"></path>
+                    </svg>Inventory Search
+                </a>    
+            </nav>
+
+        </aside>
+
+
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        
+        
+        <header class="flex-row flex-horizontal-center">
+            
+            <div id="header-left">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+                    ☰
+                </button>
+                
+                <div id="search-container" class="rounded flex-row flex-horizontal-center gap-2">
+                    <svg class="icon-16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.3-4.3"/>
+                    </svg>
+                    <input type="text" id="search-input" placeholder="Search inventory...">
+                </div>
+
+            </div>
+            
+            <div class="header-right flex-row flex-horizontal-center gap-4">
+                
+                <button id="notifications" class="icon-button" type="button" aria-label="View notifications">
+                    <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
+                        <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path>
+                    </svg>
+                    <span class="notification-dot" aria-hidden="true"></span>
+                </button>
+
+                <div class="vertical-divider" aria-hidden="true"></div>
+                
+                <a href="#" id="user" class="flex-center gap-2">
+                    <span class="avatar flex-center">
+                        <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </span>
+                    <span>J. Doe</span>
+                </a>
+            </div>
+        
+        </header>
+
+
+        <main>
+            <h1>Welcome to Parta Inventory</h1>
+            <p>This is the dashboard for managing electronic components inventory.</p>
+            <p>Use the navigation above to search inventory or view part details.</p>
+
+            <div class="rounded">This is a rounded div.</div>
+        </main>
+
+    </div>
+    
+    
     <footer>
         <p>&copy; 2026 Parta Inventory</p>
     </footer>
+
+
+    
+<script>
+    const menuOpen = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function openMenu()
+    {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.classList.add('menu-open');
+    }
+
+    function closeMenu()
+    {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.classList.remove('menu-open');
+    }
+
+    menuOpen.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    window.addEventListener('resize', () =>
+    {
+        if (window.innerWidth > 768)
+        {
+            closeMenu();
+        }
+    });
+</script>
+
 </body>
 </html>
