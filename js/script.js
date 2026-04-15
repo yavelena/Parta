@@ -29,3 +29,25 @@ window.addEventListener('resize', () =>
         closeMenu();
     }
 });
+
+
+const viewToggleButtons = document.querySelectorAll('.view-toggle-btn');
+
+viewToggleButtons.forEach((button) =>
+{
+    button.addEventListener('click', () =>
+    {
+        viewToggleButtons.forEach((item) =>
+        {
+            item.classList.remove('is-active');
+        });
+
+        button.classList.add('is-active');
+
+        const selectedView = button.dataset.view;
+        console.log('Current view:', selectedView);
+
+        // here switch table mode:
+        // grouped / exact
+    });
+});

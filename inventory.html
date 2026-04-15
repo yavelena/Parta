@@ -144,15 +144,25 @@
             
             <section class="inventory-toolbar flex-row flex-horizontal-center">
                 <div class="toolbar-left flex-row flex-horizontal-center gap-3">
-                    <button class="toolbar-btn" type="button">Filters</button>
-                    <button class="toolbar-btn toolbar-btn-active" type="button" id="grouped-view-btn">Grouped</button>
-                    <button class="toolbar-btn" type="button" id="exact-view-btn">Exact Lots</button>
+                    
+                    <button class="btn" type="button">Filters</button>
+                    
+                    <div class="view-toggle flex-row flex-horizontal-center gap-2" role="group" aria-label="Toggle inventory view">
+                        <button class="view-toggle-btn" type="button" data-view="grouped">
+                            Grouped
+                        </button>
+
+                        <button class="view-toggle-btn is-active" type="button" data-view="exact">
+                            Exact Lots
+                        </button>
+                    </div>
+                    
                     <span class="results-count" id="results-count"><span id="filtered-results-cnt">0</span> results</span>
                 </div>
 
                 <div class="toolbar-right flex-row flex-horizontal-center gap-3">
                     <label for="sort-select" class="text-500">Sort by:</label>
-                    <select id="sort-select" class="sort-select">
+                    <select id="sort-select" class="rounded-sm sort-select">
                         <option value="relevance">Relevance</option>
                         <option value="qty-desc">Qty: high to low</option>
                         <option value="qty-asc">Qty: low to high</option>

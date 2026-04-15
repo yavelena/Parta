@@ -3,7 +3,7 @@ const DATA_URL = 'data/inventory.json';
 const searchInput = document.getElementById('inventory-search-input');
 const sortSelect = document.getElementById('sort-select');
 const tableBody = document.getElementById('inventory-table-body');
-const resultsCount = document.getElementById('results-count');
+const resultsCount = document.getElementById('filtered-results-cnt');
 const filterChips = document.getElementById('filter-chips');
 const clearFiltersBtn = document.getElementById('clear-filters-btn');
 

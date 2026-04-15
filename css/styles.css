@@ -187,6 +187,9 @@ h3{
 .text-red{
     color: var(--color-red-500);
 }
+.font-medium{
+    font-weight: var(--font-weight-medium);
+}
 .font-semibold{
     font-weight: var(--font-weight-semibold);
 }
@@ -209,6 +212,11 @@ h3{
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
 }
+.rounded-sm{
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+}
+
 .white-bg{
     background: var(--color-white);
 }
@@ -269,6 +277,20 @@ h3{
 .hidden{
     display: none;
 }
+
+.btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: calc(var(--spacing) * 3); /* 12px */;
+    padding: 12px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-white);
+    color: var(--color-slate-800);
+    cursor: pointer;
+}
+
 .icon-button
 {
     position: relative;
@@ -282,7 +304,39 @@ h3{
     cursor: pointer;
 }
 
+.view-toggle
+{
+    /* display: inline-flex; */
+    padding: 6px;
+    background: var(--color-slate-100);
+    border-radius: var(--radius-sm);
+}
 
+.view-toggle-btn
+{
+    padding: 12px 16px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--color-slate-500);
+    /* font-size: var(--text-lg); */
+    /* font-weight: var(--font-weight-medium); */
+    cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+}
+
+.view-toggle-btn.is-active
+{
+    background: var(--color-white);
+    color: var(--color-slate-900);
+    /* box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08); */
+    box-shadow: 0 2px 4px var(--color-slate-300);
+}
+
+.view-toggle-btn:hover:not(.is-active)
+{
+    color: var(--color-slate-700);
+}
 
 
 /* ================================
@@ -360,6 +414,7 @@ nav a:hover{
     background: var(--color-slate-800);
     border-radius: var(--radius);
 }
+
 
 /* --- sidebar menu toggle ----- */
 
