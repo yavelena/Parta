@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "name": "Resistor 10kΩ 1% 0402",
+    "category": "Resistor",
+    "package": "0402",
+    "parameters": ["resistance: 10kΩ", "tolerance: 1%"],
+    "qty": 2450,
+    "locations": 5,
+    "manufacturers": ["Yageo", "KOA Speer"],
+    "status": "In Stock",
+    "partNumbers": 3,
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Resistor 10kΩ 5% 0603",
+    "category": "Resistor",
+    "package": "0603",
+    "parameters": ["resistance: 10kΩ", "tolerance: 5%"],
+    "qty": 5670,
+    "locations": 8,
+    "manufacturers": ["Yageo", "Panasonic"],
+    "status": "In Stock",
+    "partNumbers": 5,
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "Capacitor 10μF 16V X7R 0805",
+    "category": "Capacitor",
+    "package": "0805",
+    "parameters": ["capacitance: 10μF", "voltage: 16V"],
+    "qty": 3240,
+    "locations": 6,
+    "manufacturers": ["Murata", "Samsung"],
+    "status": "In Stock",
+    "partNumbers": 4,
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "Capacitor 100nF 50V X7R 0603",
+    "category": "Capacitor",
+    "package": "0603",
+    "parameters": ["capacitance: 100nF", "voltage: 50V"],
+    "qty": 8920,
+    "locations": 12,
+    "manufacturers": ["Murata", "Samsung"],
+    "status": "In Stock",
+    "partNumbers": 6,
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "name": "IC STM32F407VGT6 MCU",
+    "category": "IC",
+    "package": "LQFP-100",
+    "parameters": ["type: MCU", "core: ARM Cortex-M4"],
+    "qty": 47,
+    "locations": 2,
+    "manufacturers": ["STMicroelectronics"],
+    "status": "In Stock",
+    "partNumbers": 1,
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "LED Red 0805 2mA",
+    "category": "LED",
+    "package": "0805",
+    "parameters": ["color: Red", "wavelength: 625nm"],
+    "qty": 156,
+    "locations": 2,
+    "manufacturers": ["Lite-On", "Kingbright"],
+    "status": "Low Stock",
+    "partNumbers": 2,
+    "inStock": true
+  }
+]

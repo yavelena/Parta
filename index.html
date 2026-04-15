@@ -12,20 +12,28 @@
         <aside id="sidebar">
 
             <div class="sidebar-header flex-row flex-horizontal-center">
-                <div class="sidebar-logo flex-row flex-horizontal-center gap-2">
+                
+                <a href="index.html" class="sidebar-logo flex-row flex-horizontal-center gap-2" aria-label="Parta Inventory home">
                     <div id="logo" class="blue-bg flex-center">PI</div><span class="logo-text">Parta Inventory</span>
-                </div>
+                </a>
 
-                <a href="#" id="menu-close" class="menu-close flex-center" aria-label="Close menu">
+                <button
+                    id="menu-close"
+                    class="menu-close flex-center"
+                    type="button"
+                    aria-label="Close menu"
+                    aria-controls="sidebar"
+                    aria-expanded="true"
+                >
                     <svg class="icon-xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M18 6 6 18"></path>
                         <path d="m6 6 12 12"></path>
                     </svg>
-                </a>
+                </button>
             </div>
             
             <nav class="flex-col">
-                <a href="index.html" id="dashboard" class="nav-active-item">
+                <a href="index.html" class="nav-active-item">
                     <svg class="icon-base" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect width="7" height="9" x="3" y="3" rx="1"></rect>
                         <rect width="7" height="5" x="14" y="3" rx="1"></rect>
@@ -33,7 +41,7 @@
                         <rect width="7" height="5" x="3" y="16" rx="1"></rect>
                     </svg> Dashboard
                 </a>
-                <a href="inventory.html" id="inventory">
+                <a href="inventory.html">
                     <svg class="icon-base"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
                         <path d="M12 22V12"></path>
@@ -47,20 +55,31 @@
 
         <div class="sidebar-overlay" id="sidebar-overlay"></div>
         
-        <header class="flex-row flex-horizontal-center">
+        <header class="flex-row flex-horizontal-center white-bg">
             
             <div id="header-left">
                 <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
                     ☰
                 </button>
                 
-                <div id="search-container" class="rounded flex-row flex-horizontal-center gap-2">
-                    <svg class="icon-16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"/>
-                        <path d="m21 21-4.3-4.3"/>
-                    </svg>
-                    <input type="text" id="search-input" placeholder="Search inventory...">
-                </div>
+
+                <form id="global-search-form" role="search" aria-label="Inventory search">
+                    <label for="search-input" class="hidden">Search inventory</label>
+
+                    <div class="search-container rounded flex-row flex-horizontal-center gap-2">
+                        <svg class="icon-16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.3-4.3"/>
+                        </svg>
+                        <input
+                            type="search"
+                            id="search-input"
+                            name="q"
+                            placeholder="Search inventory..."
+                            autocomplete="off"
+                        >
+                    </div>
+                </form>
 
             </div>
             
@@ -91,6 +110,16 @@
 
 
         <main class="flex-col gap-4">
+            
+
+
+
+            
+            <!--   ================ PAGE CONTENT =========================== -->
+            
+            
+            
+            
             <div>
                 <h1>Dashboard</h1>
                 <p>Electronic components inventory overview</p>
@@ -154,311 +183,317 @@
             </section>
 
 
-            <section class="dashboard-grid">
+            <div class="dashboard-grid">
 
-            <section class="panel rounded">
-                <div class="panel-header flex-row flex-horizontal-center">
-                    <h2>Low Stock</h2>
-                    <span class="text-500">5 items</span>
-                </div>
-
-                <div class="panel-body no-padding">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Part</th>
-                                <th>Category</th>
-                                <th>Stock</th>
-                                <th>Threshold</th>
-                                <th>Locations</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Resistor 10kΩ 1% 0402</td>
-                                <td class="text-500">Resistor</td>
-                                <td>245</td>
-                                <td class="text-500">500</td>
-                                <td>3</td>
-                                <td><span class="badge badge-low">Low</span></td>
-                            </tr>
-                            <tr>
-                                <td>Capacitor 10μF 16V X7R 0805</td>
-                                <td class="text-500">Capacitor</td>
-                                <td>124</td>
-                                <td class="text-500">500</td>
-                                <td>2</td>
-                                <td><span class="badge badge-low">Low</span></td>
-                            </tr>
-                            <tr>
-                                <td>LED Red 0805 2mA</td>
-                                <td class="text-500">LED</td>
-                                <td>78</td>
-                                <td class="text-500">200</td>
-                                <td>1</td>
-                                <td><span class="badge badge-critical">Critical</span></td>
-                            </tr>
-                            <tr>
-                                <td>Resistor 100Ω 5% 0603</td>
-                                <td class="text-500">Resistor</td>
-                                <td>432</td>
-                                <td class="text-500">1000</td>
-                                <td>4</td>
-                                <td><span class="badge badge-low">Low</span></td>
-                            </tr>
-                            <tr>
-                                <td>Capacitor 100nF 50V X7R 0603</td>
-                                <td class="text-500">Capacitor</td>
-                                <td>189</td>
-                                <td class="text-500">500</td>
-                                <td>2</td>
-                                <td><span class="badge badge-low">Low</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <section class="panel rounded">
-                <div class="panel-header flex-row flex-horizontal-center">
-                    <h2>Inventory by Category</h2>
-                </div>
-
-                <div class="panel-body flex-col gap-4">
-                    <div class="category-item flex-col gap-2">
-                        <div class="flex-row flex-horizontal-center">
-                            <span class="text-500 font-semibold">Resistors</span>
-                            <span class="text-900 font-semibold">1247</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-fill progress-blue" style="width: 100%;"></div>
-                        </div>
+                <section class="panel rounded">
+                    <div class="panel-header flex-row flex-horizontal-center">
+                        <h2>Low Stock</h2>
+                        <span class="text-500">5 items</span>
                     </div>
 
-                    <div class="category-item flex-col gap-2">
-                        <div class="flex-row flex-horizontal-center">
-                            <span class="text-500 font-semibold">Capacitors</span>
-                            <span class="text-900 font-semibold">892</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-fill progress-green" style="width: 72%;"></div>
-                        </div>
+                    <div class="panel-body no-padding">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Part</th>
+                                    <th>Category</th>
+                                    <th>Stock</th>
+                                    <th>Threshold</th>
+                                    <th>Locations</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Resistor 10kΩ 1% 0402</td>
+                                    <td class="text-500">Resistor</td>
+                                    <td>245</td>
+                                    <td class="text-500">500</td>
+                                    <td>3</td>
+                                    <td><span class="badge badge-low">Low</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Capacitor 10μF 16V X7R 0805</td>
+                                    <td class="text-500">Capacitor</td>
+                                    <td>124</td>
+                                    <td class="text-500">500</td>
+                                    <td>2</td>
+                                    <td><span class="badge badge-low">Low</span></td>
+                                </tr>
+                                <tr>
+                                    <td>LED Red 0805 2mA</td>
+                                    <td class="text-500">LED</td>
+                                    <td>78</td>
+                                    <td class="text-500">200</td>
+                                    <td>1</td>
+                                    <td><span class="badge badge-critical">Critical</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Resistor 100Ω 5% 0603</td>
+                                    <td class="text-500">Resistor</td>
+                                    <td>432</td>
+                                    <td class="text-500">1000</td>
+                                    <td>4</td>
+                                    <td><span class="badge badge-low">Low</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Capacitor 100nF 50V X7R 0603</td>
+                                    <td class="text-500">Capacitor</td>
+                                    <td>189</td>
+                                    <td class="text-500">500</td>
+                                    <td>2</td>
+                                    <td><span class="badge badge-low">Low</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="panel rounded">
+                    <div class="panel-header flex-row flex-horizontal-center">
+                        <h2>Inventory by Category</h2>
                     </div>
 
-                    <div class="category-item flex-col gap-2">
-                        <div class="flex-row flex-horizontal-center">
-                            <span class="text-500 font-semibold">ICs</span>
-                            <span class="text-900 font-semibold">423</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-fill progress-purple" style="width: 34%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="category-item flex-col gap-2">
-                        <div class="flex-row flex-horizontal-center">
-                            <span class="text-500 font-semibold">LEDs</span>
-                            <span class="text-900 font-semibold">156</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-fill progress-amber" style="width: 13%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="category-item flex-col gap-2">
-                        <div class="flex-row flex-horizontal-center">
-                            <span class="text-500 font-semibold">Connectors</span>
-                            <span class="text-900 font-semibold">129</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-fill progress-red" style="width: 10%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="panel rounded">
-                <div class="panel-header flex-row flex-horizontal-center">
-                    <h2>Recent Movements</h2>
-                    <span class="text-500">Last 6 transactions</span>
-                </div>
-
-                <div class="panel-body no-padding">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Time</th>
-                                <th>Type</th>
-                                <th>Part</th>
-                                <th>Qty</th>
-                                <th>Location</th>
-                                <th>User</th>
-                                <th>Project</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-500">14:32</td>
-                                <td><span class="badge badge-blue">Consume</span></td>
-                                <td>Resistor 10kΩ 1% 0402</td>
-                                <td class="text-red font-semibold">-50</td>
-                                <td class="text-500">R-12-C</td>
-                                <td class="text-500">M. Rodriguez</td>
-                                <td><a href="#" class="table-link">PRJ-2847</a></td>
-                            </tr>
-                            <tr>
-                                <td class="text-500">13:18</td>
-                                <td><span class="badge badge-green">Receive</span></td>
-                                <td>IC STM32F407VGT6</td>
-                                <td class="text-green font-semibold">+25</td>
-                                <td class="text-500">IC-08-A</td>
-                                <td class="text-500">J. Chen</td>
-                                <td class="text-400">—</td>
-                            </tr>
-                            <tr>
-                                <td class="text-500">12:54</td>
-                                <td><span class="badge badge-purple">Move</span></td>
-                                <td>Capacitor 22μF 25V 0805</td>
-                                <td class="text-green font-semibold">+100</td>
-                                <td class="text-500">C-23-D → C-24-A</td>
-                                <td class="text-500">A. Park</td>
-                                <td class="text-400">—</td>
-                            </tr>
-                            <tr>
-                                <td class="text-500">11:45</td>
-                                <td><span class="badge badge-blue">Consume</span></td>
-                                <td>Resistor 4.7kΩ 1% 0603</td>
-                                <td class="text-red font-semibold">-200</td>
-                                <td class="text-500">R-18-B</td>
-                                <td class="text-500">S. Kumar</td>
-                                <td><a href="#" class="table-link">PRJ-2851</a></td>
-                            </tr>
-                            <tr>
-                                <td class="text-500">10:23</td>
-                                <td><span class="badge badge-gray">Adjust</span></td>
-                                <td>LED Green 0805 2mA</td>
-                                <td class="text-red font-semibold">-15</td>
-                                <td class="text-500">L-05-C</td>
-                                <td class="text-500">J. Chen</td>
-                                <td class="text-400">—</td>
-                            </tr>
-                            <tr>
-                                <td class="text-500">09:47</td>
-                                <td><span class="badge badge-green">Receive</span></td>
-                                <td>Connector USB-C SMT</td>
-                                <td class="text-green font-semibold">+50</td>
-                                <td class="text-500">CN-14-F</td>
-                                <td class="text-500">A. Park</td>
-                                <td class="text-400">—</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <section class="panel rounded">
-                <div class="panel-header flex-row flex-horizontal-center">
-                    <h2>Needs Review</h2>
-                    <span class="text-500">3 items</span>
-                </div>
-
-                <div class="panel-body no-padding">
-                    <div class="review-list">
-                        <article class="review-item">
-                            <div class="flex-col gap-2">
-                                <div class="review-title-row">
-                                    <span class="review-alert">!</span>
-                                    <h3 class="review-title">Unknown Capacitor 0805</h3>
-                                </div>
-                                <p class="text-500">C-45-G &nbsp;•&nbsp; 47 units</p>
-                                <div class="flex-row gap-3 flex-horizontal-center">
-                                    <span class="badge badge-low">Low</span>
-                                    <span class="text-500">2026-04-10</span>
-                                </div>
+                    <div class="panel-body flex-col gap-4">
+                        <div class="category-item flex-col gap-2">
+                            <div class="flex-row flex-horizontal-center">
+                                <span class="text-500 font-semibold">Resistors</span>
+                                <span class="text-900 font-semibold">1247</span>
                             </div>
-                        </article>
-
-                        <article class="review-item">
-                            <div class="flex-col gap-2">
-                                <div class="review-title-row">
-                                    <span class="review-alert">!</span>
-                                    <h3 class="review-title">Resistor (unlabeled) 0603</h3>
-                                </div>
-                                <p class="text-500">R-32-A &nbsp;•&nbsp; 23 units</p>
-                                <div class="flex-row gap-3 flex-horizontal-center">
-                                    <span class="badge badge-none">None</span>
-                                    <span class="text-500">2026-04-11</span>
-                                </div>
+                            <div
+                                class="progress-track"
+                                role="progressbar"
+                                aria-label="Resistors"
+                                aria-valuemin="0"
+                                aria-valuemax="1247"
+                                aria-valuenow="1247"
+                            >
+                                <div class="progress-fill progress-blue" style="width: 100%;"></div>
                             </div>
-                        </article>
+                        </div>
 
-                        <article class="review-item">
-                            <div class="flex-col gap-2">
-                                <div class="review-title-row">
-                                    <span class="review-alert">!</span>
-                                    <h3 class="review-title">IC (partial label) TSSOP-20</h3>
-                                </div>
-                                <p class="text-500">IC-22-D &nbsp;•&nbsp; 8 units</p>
-                                <div class="flex-row gap-3 flex-horizontal-center">
-                                    <span class="badge badge-low">Low</span>
-                                    <span class="text-500">2026-04-09</span>
-                                </div>
+                        <div class="category-item flex-col gap-2">
+                            <div class="flex-row flex-horizontal-center">
+                                <span class="text-500 font-semibold">Capacitors</span>
+                                <span class="text-900 font-semibold">892</span>
                             </div>
-                        </article>
+                            <div 
+                                class="progress-track"
+                                role="progressbar"
+                                aria-label="Capacitors"
+                                aria-valuemin="0"
+                                aria-valuemax="892"
+                                aria-valuenow="892"
+                            >
+                                <div class="progress-fill progress-green" style="width: 72%;"></div>
+                            </div>
+                        </div>
 
-                        <a href="#" class="review-link">Review All Items →</a>
+                        <div class="category-item flex-col gap-2">
+                            <div class="flex-row flex-horizontal-center">
+                                <span class="text-500 font-semibold">ICs</span>
+                                <span class="text-900 font-semibold">423</span>
+                            </div>
+                            <div
+                                class="progress-track"
+                                role="progressbar"
+                                aria-label="ICs"
+                                aria-valuemin="0"
+                                aria-valuemax="423"
+                                aria-valuenow="423"
+                            >
+                                <div class="progress-fill progress-purple" style="width: 34%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="category-item flex-col gap-2">
+                            <div class="flex-row flex-horizontal-center">
+                                <span class="text-500 font-semibold">LEDs</span>
+                                <span class="text-900 font-semibold">156</span>
+                            </div>
+                            <div
+                                class="progress-track"
+                                role="progressbar"
+                                aria-label="LEDs"
+                                aria-valuemin="0"
+                                aria-valuemax="156"
+                                aria-valuenow="156"
+                            >
+                                <div class="progress-fill progress-amber" style="width: 13%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="category-item flex-col gap-2">
+                            <div class="flex-row flex-horizontal-center">
+                                <span class="text-500 font-semibold">Connectors</span>
+                                <span class="text-900 font-semibold">129</span>
+                            </div>
+                            <div
+                                class="progress-track"
+                                role="progressbar"
+                                aria-label="Connectors"
+                                aria-valuemin="0"
+                                aria-valuemax="129"
+                                aria-valuenow="129"
+                            >
+                                <div class="progress-fill progress-red" style="width: 10%;"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-        </section>
+                <section class="panel rounded">
+                    <div class="panel-header flex-row flex-horizontal-center">
+                        <h2>Recent Movements</h2>
+                        <span class="text-500">Last 6 transactions</span>
+                    </div>
+
+                    <div class="panel-body no-padding">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Type</th>
+                                    <th>Part</th>
+                                    <th>Qty</th>
+                                    <th>Location</th>
+                                    <th>User</th>
+                                    <th>Project</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-500">14:32</td>
+                                    <td><span class="badge badge-blue">Consume</span></td>
+                                    <td>Resistor 10kΩ 1% 0402</td>
+                                    <td class="text-red font-semibold">-50</td>
+                                    <td class="text-500">R-12-C</td>
+                                    <td class="text-500">M. Rodriguez</td>
+                                    <td><a href="#" class="table-link">PRJ-2847</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-500">13:18</td>
+                                    <td><span class="badge badge-green">Receive</span></td>
+                                    <td>IC STM32F407VGT6</td>
+                                    <td class="text-green font-semibold">+25</td>
+                                    <td class="text-500">IC-08-A</td>
+                                    <td class="text-500">J. Chen</td>
+                                    <td class="text-400">—</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-500">12:54</td>
+                                    <td><span class="badge badge-purple">Move</span></td>
+                                    <td>Capacitor 22μF 25V 0805</td>
+                                    <td class="text-green font-semibold">+100</td>
+                                    <td class="text-500">C-23-D → C-24-A</td>
+                                    <td class="text-500">A. Park</td>
+                                    <td class="text-400">—</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-500">11:45</td>
+                                    <td><span class="badge badge-blue">Consume</span></td>
+                                    <td>Resistor 4.7kΩ 1% 0603</td>
+                                    <td class="text-red font-semibold">-200</td>
+                                    <td class="text-500">R-18-B</td>
+                                    <td class="text-500">S. Kumar</td>
+                                    <td><a href="#" class="table-link">PRJ-2851</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-500">10:23</td>
+                                    <td><span class="badge badge-gray">Adjust</span></td>
+                                    <td>LED Green 0805 2mA</td>
+                                    <td class="text-red font-semibold">-15</td>
+                                    <td class="text-500">L-05-C</td>
+                                    <td class="text-500">J. Chen</td>
+                                    <td class="text-400">—</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-500">09:47</td>
+                                    <td><span class="badge badge-green">Receive</span></td>
+                                    <td>Connector USB-C SMT</td>
+                                    <td class="text-green font-semibold">+50</td>
+                                    <td class="text-500">CN-14-F</td>
+                                    <td class="text-500">A. Park</td>
+                                    <td class="text-400">—</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="panel rounded">
+                    <div class="panel-header flex-row flex-horizontal-center">
+                        <h2>Needs Review</h2>
+                        <span class="text-500">3 items</span>
+                    </div>
+
+                    <div class="panel-body no-padding">
+                        <div class="review-list">
+                            <article class="review-item">
+                                <div class="flex-col gap-2">
+                                    <div class="review-title-row">
+                                        <span class="review-alert">!</span>
+                                        <h3 class="review-title">Unknown Capacitor 0805</h3>
+                                    </div>
+                                    <p class="text-500">C-45-G &nbsp;•&nbsp; 47 units</p>
+                                    <div class="flex-row gap-3 flex-horizontal-center">
+                                        <span class="badge badge-low">Low</span>
+                                        <span class="text-500">2026-04-10</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="review-item">
+                                <div class="flex-col gap-2">
+                                    <div class="review-title-row">
+                                        <span class="review-alert">!</span>
+                                        <h3 class="review-title">Resistor (unlabeled) 0603</h3>
+                                    </div>
+                                    <p class="text-500">R-32-A &nbsp;•&nbsp; 23 units</p>
+                                    <div class="flex-row gap-3 flex-horizontal-center">
+                                        <span class="badge badge-none">None</span>
+                                        <span class="text-500">2026-04-11</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="review-item">
+                                <div class="flex-col gap-2">
+                                    <div class="review-title-row">
+                                        <span class="review-alert">!</span>
+                                        <h3 class="review-title">IC (partial label) TSSOP-20</h3>
+                                    </div>
+                                    <p class="text-500">IC-22-D &nbsp;•&nbsp; 8 units</p>
+                                    <div class="flex-row gap-3 flex-horizontal-center">
+                                        <span class="badge badge-low">Low</span>
+                                        <span class="text-500">2026-04-09</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <a href="#" class="review-link">Review All Items →</a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+
+
+<!--   ================ END PAGE CONTENT =========================== -->
 
 
 
         </main>
+        <footer>
+            <p>&copy; 2026 Parta Inventory</p>
+        </footer>
 
     </div>
-    
-    
-    <footer>
-        <p>&copy; 2026 Parta Inventory</p>
-    </footer>
 
 
     
-<script>
-    const menuOpen = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('sidebar-overlay');
-
-    function openMenu()
-    {
-        sidebar.classList.add('open');
-        overlay.classList.add('show');
-        document.body.classList.add('menu-open');
-    }
-
-    function closeMenu()
-    {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('show');
-        document.body.classList.remove('menu-open');
-    }
-
-    menuOpen.addEventListener('click', openMenu);
-    menuClose.addEventListener('click', closeMenu);
-    overlay.addEventListener('click', closeMenu);
-
-    window.addEventListener('resize', () =>
-    {
-        if (window.innerWidth > 768)
-        {
-            closeMenu();
-        }
-    });
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
