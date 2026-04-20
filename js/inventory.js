@@ -84,7 +84,7 @@ function renderTable(items)
                 <td class="text-500">${parametersHtml}</td>
                 <td class="text-900 font-semibold">${formatNumber(item.qty)}</td>
                 <td>
-                    <span class="table-count-badge">${item.locations}</span>
+                    <span class="badge table-count-badge">${item.locations}</span>
                 </td>
                 <td class="text-500">${escapeHtml(manufacturersDisplay)}</td>
                 <td>
@@ -129,7 +129,7 @@ function renderFilterChips()
     filterChips.innerHTML = chips.map((chip) =>
     {
         return `
-            <button class="filter-chip" type="button" data-filter-key="${chip.key}">
+            <button class="chip filter-chip" type="button" data-filter-key="${chip.key}">
                 ${escapeHtml(chip.label)}
                 <span class="filter-chip-close">×</span>
             </button>

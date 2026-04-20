@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>DigiKey Search | Parta Inventory</title>
+</head>
+<body>
+    <div class="container">
+
+        <aside id="sidebar">
+
+            <div class="sidebar-header flex-row flex-horizontal-center">
+                
+                <a href="index.html" class="sidebar-logo flex-row flex-horizontal-center gap-2" aria-label="Parta Inventory home">
+                    <div id="logo" class="blue-bg flex-center">PI</div><span class="logo-text">Parta Inventory</span>
+                </a>
+
+                <button
+                    id="menu-close"
+                    class="menu-close flex-center"
+                    type="button"
+                    aria-label="Close menu"
+                    aria-controls="sidebar"
+                    aria-expanded="true"
+                >
+                    <svg class="icon-xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                        <path d="M18 6 6 18"></path>
+                        <path d="m6 6 12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <nav class="flex-col">
+                <a href="index.html">
+                    <svg class="icon-base" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                        <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                        <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                        <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                        <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                    </svg> Dashboard
+                </a>
+                <a href="inventory.html">
+                    <svg class="icon-base"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
+                        <path d="M12 22V12"></path>
+                        <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                        <path d="m7.5 4.27 9 5.15"></path>
+                    </svg>Inventory Search
+                </a>    
+                <a href="digikey-search.html"  class="nav-active-item">
+                    <svg class="icon-cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <circle cx="8" cy="21" r="1"></circle>
+                        <circle cx="19" cy="21" r="1"></circle>
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                    </svg>DigiKey Search
+                </a>    
+            </nav>
+
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        
+        <header class="flex-row flex-horizontal-center white-bg">
+            
+            <div id="header-left">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+                    ☰
+                </button>
+                
+
+                <form id="global-search-form" role="search" aria-label="Inventory search">
+                    <label for="search-input" class="hidden">Global search</label>
+
+                    <div id="global-search-container" class="search-container rounded flex-row flex-horizontal-center gap-2">
+                        <svg class="icon-16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" >
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.3-4.3"/>
+                        </svg>
+                        <input
+                            type="search"
+                            id="search-input"
+                            name="q"
+                            placeholder="Global search..."
+                            autocomplete="off"
+                        >
+                    </div>
+                </form>
+
+            </div>
+            
+            <div class="header-right flex-row flex-horizontal-center gap-4">
+                
+                <button id="notifications" class="icon-button" type="button" aria-label="View notifications">
+                    <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                        <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
+                        <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path>
+                    </svg>
+                    <span class="notification-dot" aria-hidden="true"></span>
+                </button>
+
+                <div class="vertical-divider" aria-hidden="true"></div>
+                
+                <a href="#" id="user" class="flex-center gap-2">
+                    <span class="avatar flex-center">
+                        <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </span>
+                    <span>J. Doe</span>
+                </a>
+            </div>
+        
+        </header>
+
+
+        <main class="flex-col gap-4">
+            
+
+
+
+            
+<!--   ================ PAGE CONTENT =========================== -->
+            
+
+<section>
+    <h1>Search Components</h1>
+    <p>Find a component by part number, keyword, or manufacturer</p>
+</section>
+
+<div class="layout-with-sidebar">
+    
+    <div class="layout-main">
+
+        <section class="panel rounded component-search-card">
+            
+            <div class="panel-header">
+                <h2>Component Search</h2>
+            </div>
+
+            <div class="panel-body flex-col gap-4">
+                <form class="digikey-search-form flex-col gap-4" action="#" method="get">
+                    
+                    <div class="form-field">
+                        <label for="component-query" class="form-label">
+                            Search Query 
+                        </label>
+
+                        <div class="search-container rounded flex-row flex-horizontal-center gap-3">
+                            <svg class="icon-xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                            <input
+                                id="component-query"
+                                name="query"
+                                type="text"
+                                placeholder="e.g. STM32F407VGT6, 10k 0402, Murata 0.1uF"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="digikey-form-filters-group gap-3">
+                        
+                        <div class="form-field">
+                            <label for="component-qty" class="form-label">Quantity</label>
+                            <input id="component-qty" name="quantity" class="form-control rounded-sm" type="number" min="1" value="1">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="component-site" class="form-label">Site</label>
+                            <select id="component-site" name="site" class="form-control rounded-sm">
+                                <option value="US" selected>United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="EU">Europe</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="component-language" class="form-label">Language</label>
+                            <select id="component-language" name="language" class="form-control rounded-sm">
+                                <option value="en" selected>English</option>
+                                <option value="fr">French</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="component-currency" class="form-label">Currency</label>
+                            <select id="component-currency" name="currency" class="form-control rounded-sm">
+                                <option value="USD" selected>USD ($)</option>
+                                <option value="CAD">CAD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions flex-row wrap gap-3">
+                        <button type="submit" class="btn btn-primary">
+                            <svg class="icon-base" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                            Search
+                        </button>
+
+                        <button type="reset" class="btn btn-secondary">
+                            Clear
+                        </button>
+                    </div>
+                </form>
+
+                <div class="form-note flex-row gap-2 text-xs">
+                    <span aria-hidden="true">💡</span>
+                    <span>You can search by part number, supplier number, manufacturer, or keyword.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel rounded search-results-placeholder">
+            <div class="panel-header">
+                <h2>Search Results</h2>
+            </div>
+            <div class="panel-body">
+                <p class="text-500">Results will appear here after you submit a search.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <aside class="layout-sidebar">
+
+        <section class="panel rounded info-panel info-panel-purple">
+            <div class="panel-body flex-col gap-2">
+                <div class="info-title-row flex-row flex-horizontal-center gap-3">
+                    <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                    </svg>
+                    <h3 class="text-lg">Mock Data Mode</h3>
+                </div>
+
+                <p>This is a demonstration using sample data. In production, this would connect to the Digi-Key API.</p>
+            </div>
+        </section>
+
+        <section class="panel rounded">
+            <div class="panel-header">
+                <h2>Search Tips</h2>
+            </div>
+
+            <div class="panel-body flex-col gap-4">
+                <div class="flex-col gap-1">
+                    <h3 class="text-lg">Part Numbers</h3>
+                    <p class="text-500">Search by exact manufacturer part number for best results.</p>
+                    <div class="badge badge-wide">STM32F407VGT6</div>
+                </div>
+
+                <div class="flex-col gap-1">
+                    <h3 class="text-lg">Component Values</h3>
+                    <p class="text-500">Include value and package for passive components.</p>
+                    <div class="badge badge-wide">10k 0402 resistor</div>
+                </div>
+
+                <div class="flex-col gap-1">
+                    <h3 class="text-lg">Manufacturers</h3>
+                    <p class="text-500">Filter by manufacturer name or prefix.</p>
+                    <div class="badge badge-wide">Murata 0.1uF</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel rounded">
+            <div class="panel-header">
+                <h2>Example Queries</h2>
+            </div>
+
+            <div class="panel-body flex-col gap-3">
+                <button type="button" class="btn-chip">STM32F407VGT6</button>
+                <button type="button" class="btn-chip">10k 0402</button>
+                <button type="button" class="btn-chip">Murata 0.1uF</button>
+                <button type="button" class="btn-chip">USB-C connector</button>
+            </div>
+        </section>
+
+    </aside>
+</div>
+
+<!-- ================ END PAGE CONTENT =========================== -->
+
+
+
+                
+            
+            
+            
+            
+
+
+
+
+<!--   ================ END PAGE CONTENT =========================== -->
+
+
+
+        </main>
+        <footer>
+            <p>&copy; 2026 Parta Inventory</p>
+        </footer>
+
+    </div>
+
+
+    
+<script src="js/script.js"></script>
+<script src="js/inventory.js"></script>
+
+</body>
+</html>
