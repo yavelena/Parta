@@ -25,7 +25,7 @@
                     aria-controls="sidebar"
                     aria-expanded="true"
                 >
-                    <svg class="icon-xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="icon-xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
                         <path d="M18 6 6 18"></path>
                         <path d="m6 6 12 12"></path>
                     </svg>
@@ -34,7 +34,7 @@
             
             <nav class="flex-col">
                 <a href="index.html" class="nav-active-item">
-                    <svg class="icon-base" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="icon-base" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
                         <rect width="7" height="9" x="3" y="3" rx="1"></rect>
                         <rect width="7" height="5" x="14" y="3" rx="1"></rect>
                         <rect width="7" height="9" x="14" y="12" rx="1"></rect>
@@ -42,12 +42,19 @@
                     </svg> Dashboard
                 </a>
                 <a href="inventory.html">
-                    <svg class="icon-base"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="icon-base"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
                         <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
                         <path d="M12 22V12"></path>
                         <polyline points="3.29 7 12 12 20.71 7"></polyline>
                         <path d="m7.5 4.27 9 5.15"></path>
                     </svg>Inventory Search
+                </a>    
+                <a href="digikey-search.html">
+                    <svg class="icon-cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <circle cx="8" cy="21" r="1"></circle>
+                        <circle cx="19" cy="21" r="1"></circle>
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                    </svg>DigiKey Search
                 </a>    
             </nav>
 
@@ -64,10 +71,10 @@
                 
 
                 <form id="global-search-form" role="search" aria-label="Inventory search">
-                    <label for="search-input" class="hidden">Search inventory</label>
+                    <label for="search-input" class="hidden">Global search</label>
 
                     <div class="search-container rounded flex-row flex-horizontal-center gap-2">
-                        <svg class="icon-16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="icon-16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" >
                             <circle cx="11" cy="11" r="8"/>
                             <path d="m21 21-4.3-4.3"/>
                         </svg>
@@ -75,7 +82,7 @@
                             type="search"
                             id="search-input"
                             name="q"
-                            placeholder="Search inventory..."
+                            placeholder="Global search..."
                             autocomplete="off"
                         >
                     </div>
@@ -86,7 +93,7 @@
             <div class="header-right flex-row flex-horizontal-center gap-4">
                 
                 <button id="notifications" class="icon-button" type="button" aria-label="View notifications">
-                    <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
                         <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
                         <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path>
                     </svg>
@@ -97,7 +104,7 @@
                 
                 <a href="#" id="user" class="flex-center gap-2">
                     <span class="avatar flex-center">
-                        <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
