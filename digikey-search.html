@@ -224,6 +224,23 @@
         <!-- END SEARCH FORM  -->
 
         
+        <!------------- SERCH WAITING SPINNER --------------------->
+        
+        <div class="info-panel panel-blue panel-body flex-row gap-4 is-loading" role="status" aria-live="polite">
+            <div class="info-panel-icon waiting_spinner" aria-hidden="true"></div>
+
+            <div>
+                <p class="panel-title">Searching Digi-Key API</p>
+                <p class="text-xs">
+                    Please wait while we search for "<span>STM32F407VGT6</span>"...
+                </p>
+            </div>
+        </div>
+
+
+
+
+
         <!------------- SERCH RESULTS HEADER --------------------->
         
         <div id="search-result-header" class="flex-col gap-3">
@@ -288,7 +305,7 @@
                 </div>
 
                 <div class="panel-body flex-col gap-3">
-                    <div class="panel-body-section flex-row gap-4">
+                    <div class="panel-body-section gap-4 row-space-between">
                         <div class="flex-col gap-3">
                             <h3>STM32F407VGT6</h3>
                             <p>ARM Microcontroller - MCU High-performance foundation line, Arm Cortex-M4 core with FPU</p>
