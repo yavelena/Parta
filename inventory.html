@@ -11,9 +11,9 @@
 
         <aside id="sidebar">
 
-            <div class="sidebar-header flex-row flex-horizontal-center">
+            <div class="sidebar-header row-space-between vertical-center">
                 
-                <a href="index.html" class="sidebar-logo flex-row flex-horizontal-center gap-2" aria-label="Parta Inventory home">
+                <a href="index.html" class="sidebar-logo flex-row vertical-center gap-2" aria-label="Parta Inventory home">
                     <div id="logo" class="blue-bg flex-center">PI</div><span class="logo-text">Parta Inventory</span>
                 </a>
 
@@ -34,7 +34,7 @@
             
             <nav class="flex-col">
                 <a href="index.html">
-                    <svg class="icon-base" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
                         <rect width="7" height="9" x="3" y="3" rx="1"></rect>
                         <rect width="7" height="5" x="14" y="3" rx="1"></rect>
                         <rect width="7" height="9" x="14" y="12" rx="1"></rect>
@@ -42,7 +42,7 @@
                     </svg> Dashboard
                 </a>
                 <a href="inventory.html" class="nav-active-item">
-                    <svg class="icon-base"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
                         <path d="M12 22V12"></path>
                         <polyline points="3.29 7 12 12 20.71 7"></polyline>
@@ -50,7 +50,7 @@
                     </svg>Inventory Search
                 </a>    
                 <a href="digikey-search.html">
-                    <svg class="icon-cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <circle cx="8" cy="21" r="1"></circle>
                         <circle cx="19" cy="21" r="1"></circle>
                         <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
@@ -62,7 +62,7 @@
 
         <div class="sidebar-overlay" id="sidebar-overlay"></div>
         
-        <header class="flex-row flex-horizontal-center white-bg">
+        <header class="row-space-between vertical-center white-bg">
             
             <div id="header-left">
                 <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">
@@ -74,7 +74,7 @@
                     
                     <label for="search-input" class="hidden">Global search</label>
 
-                    <div id="global-search-container" class="search-container rounded flex-row flex-horizontal-center gap-2">
+                    <div id="global-search-container" class="search-container rounded flex-row vertical-center gap-2">
                         <svg class="icon-16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" >
                             <circle cx="11" cy="11" r="8"/>
                             <path d="m21 21-4.3-4.3"/>
@@ -91,7 +91,7 @@
 
             </div>
             
-            <div class="header-right flex-row flex-horizontal-center gap-4">
+            <div class="header-right flex-row vertical-center gap-4">
                 
                 <button id="notifications" class="icon-button" type="button" aria-label="View notifications">
                     <svg class="icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
@@ -133,7 +133,7 @@
             
             <div class="inventory-search-panel rounded white-bg flex-col gap-4">
             
-                <div class="search-container rounded flex-row flex-horizontal-center gap-3">
+                <div class="search-container rounded flex-row vertical-center gap-3">
                     <svg class="icon-xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
                         <circle cx="11" cy="11" r="8"></circle>
                         <path d="m21 21-4.3-4.3"></path>
@@ -148,12 +148,12 @@
 
                
             
-            <section class="inventory-toolbar flex-row flex-horizontal-center wrap gap-4">
-                <div class="toolbar-left flex-row flex-horizontal-center wrap gap-4">
+            <section class="inventory-toolbar flex-row vertical-center wrap gap-4">
+                <div class="toolbar-left flex-row vertical-center wrap gap-4">
                     
                     <button class="btn" type="button">Filters</button>
                     
-                    <div class="view-toggle flex-row flex-horizontal-center gap-2" role="group" aria-label="Toggle inventory view">
+                    <div class="view-toggle flex-row vertical-center gap-2" role="group" aria-label="Toggle inventory view">
                         <button class="view-toggle-btn" type="button" data-view="grouped">
                             Grouped
                         </button>
@@ -166,8 +166,8 @@
                     <span class="results-count" id="results-count"><span id="filtered-results-cnt">0</span> results</span>
                 </div>
 
-                <div class="toolbar-right flex-row flex-horizontal-center wrap gap-3">
-                    <label for="sort-select" class="text-500">Sort by:</label>
+                <div class="row-space-between vertical-center gap-2">
+                    <label for="sort-select" class="text-500"><nobr>Sort by:</nobr></label>
                     <select id="sort-select" class="form-control">
                         <option value="relevance">Relevance</option>
                         <option value="qty-desc">Qty: high to low</option>
@@ -178,13 +178,13 @@
             </section>
 
             
-            <section class="active-filters flex-row flex-horizontal-center gap-2" id="active-filters">
+            <section class="flex-row vertical-center wrap gap-2" id="active-filters">
                 <span class="text-500">Active filters:</span>
-                <div id="filter-chips" class="flex-row flex-horizontal-center gap-2"></div>
+                <div id="filter-chips" class="flex-row vertical-center gap-2"></div>
                 <button id="clear-filters-btn" class="clear-filters-btn" type="button">Clear all</button>
             </section>
 
-            <section class="panel rounded">
+            <section class="panel">
                 <div class="panel-body no-padding">
                     <table class="data-table inventory-table">
                         <thead>

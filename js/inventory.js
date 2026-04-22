@@ -91,7 +91,7 @@ function renderTable(items)
                     <span class="badge ${getStatusBadgeClass(item.status)}">${escapeHtml(item.status)}</span>
                 </td>
                 <td>
-                    <a href="part-details.html?id=${item.id}" class="table-link">View Details</a>
+                    <a href="part-details.html?id=${item.id}" class="accent-link">View Details</a>
                 </td>
             </tr>
         `;
@@ -129,7 +129,7 @@ function renderFilterChips()
     filterChips.innerHTML = chips.map((chip) =>
     {
         return `
-            <button class="chip filter-chip" type="button" data-filter-key="${chip.key}">
+            <button class="filter-chip" type="button" data-filter-key="${chip.key}">
                 ${escapeHtml(chip.label)}
                 <span class="filter-chip-close">×</span>
             </button>
