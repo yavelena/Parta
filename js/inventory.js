@@ -91,7 +91,7 @@ function renderTable(items)
                     <span class="badge ${getStatusBadgeClass(item.status)}">${escapeHtml(item.status)}</span>
                 </td>
                 <td>
-                    <a href="part-details.html?id=${item.id}" class="accent-link">View Details</a>
+                    <a href="part-details.html?id=${item.id}" class="icon-link">View Details</a>
                 </td>
             </tr>
         `;
