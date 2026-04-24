@@ -31,13 +31,13 @@ window.addEventListener('resize', () =>
 });
 
 
-const viewToggleButtons = document.querySelectorAll('.view-toggle-btn');
+const ToggleButtons = document.querySelectorAll('.toggle-btn');
 
-viewToggleButtons.forEach((button) =>
+ToggleButtons.forEach((button) =>
 {
     button.addEventListener('click', () =>
     {
-        viewToggleButtons.forEach((item) =>
+        ToggleButtons.forEach((item) =>
         {
             item.classList.remove('is-active');
         });
