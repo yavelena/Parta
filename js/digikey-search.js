@@ -1,7 +1,6 @@
-const DIGIKEY_API_URL = 'https://parta-a2degda9hxbvaydu.canadaeast-01.azurewebsites.net/api/Parts/search';
-
-
-const form = document.getElementById('digikey-search-form');
+    const DIGIKEY_API_URL = 'https://parta-a2degda9hxbvaydu.canadaeast-01.azurewebsites.net/api/Parts/search';
+    
+    const form = document.getElementById('digikey-search-form');
 
     const queryInput = document.getElementById('component-query-input');
     const qtyInput = document.getElementById('component-qty-input');
@@ -17,11 +16,79 @@ const form = document.getElementById('digikey-search-form');
 
     const resultHeader = document.getElementById('search-result-header');
     const resultCountValue = document.getElementById('search-results-cnt-value-placeholder');
-    // const searchStringValue = document.getElementById('search-string-value');
     const searchStringValue = document.getElementById('results-search-string-value-placeholder');
     const resultsContainer = document.getElementById('digikey-search-results-block');
 
     const exampleButtons = document.querySelectorAll('.btn-chip');
+
+
+/*  ==================================================================================*/
+/*  ========================  FORM VALIDATION ========================================*/
+/*  ==================================================================================*/
+
+const queryField = document.getElementById('search-query-input-field');
+const queryError = document.getElementById('component-query-error');
+
+function validateQuery()
+{
+    const query = queryInput.value.trim();
+
+    if (query.length === 0)
+    {
+        showQueryError('Please enter a search query.');
+        queryInput.setCustomValidity('Please enter a search query.');
+        return false;
+    }
+
+    if (query.length < 2)
+    {
+        showQueryError('Search query must be at least 2 characters long.');
+        queryInput.setCustomValidity('Search query must be at least 2 characters long.');
+        return false;
+    }
+
+    clearQueryError();
+    queryInput.setCustomValidity('');
+    return true;
+}
+
+function showQueryError(message)
+{
+    queryField.classList.add('is-invalid');
+    queryInput.setAttribute('aria-invalid', 'true');
+    queryError.textContent = message;
+    queryError.hidden = false;
+}
+
+function clearQueryError()
+{
+    queryField.classList.remove('is-invalid');
+    queryInput.setAttribute('aria-invalid', 'false');
+    queryInput.setCustomValidity('');
+    queryError.textContent = '';
+    queryError.hidden = true;
+}
+
+queryInput.addEventListener('input', () =>
+{
+    validateQuery();
+});
+
+queryInput.addEventListener('invalid', () =>
+{
+    validateQuery();
+});
+queryInput.addEventListener('blur', () =>
+{
+    clearQueryError();
+});
+
+
+
+
+/*  ==================================================================================*/
+/*  ========================  DigiKey Search =========================================*/
+/*  ==================================================================================*/
 
     exampleButtons.forEach((button) =>
     {
@@ -33,11 +100,17 @@ const form = document.getElementById('digikey-search-form');
     });
     
     
-    
     form.addEventListener('submit', async (event) =>
     {
         event.preventDefault();
 
+        // FORM VALIDATION
+         if (!validateQuery())
+        {
+            //queryInput.reportValidity();
+            return;
+        }
+        
         const query = queryInput.value.trim();
 
         if (!query)
@@ -156,8 +229,6 @@ const form = document.getElementById('digikey-search-form');
             .join('');
     }
 
-    
-    
 
     function createPartCard(part, index)
     {
@@ -274,3 +345,5 @@ const form = document.getElementById('digikey-search-form');
             </a>
         `;
     }
+
+

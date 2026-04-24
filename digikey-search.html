@@ -288,8 +288,13 @@
                                 type="text"
                                 placeholder="e.g. STM32F407VGT6, 10k 0402, Murata 0.1uF"
                                 required
+                                minlength="2"
+                                autocomplete="off"
+                                aria-describedby="component-query-error"
+                                aria-invalid="false"
                             >
                         </div>
+                        <p id="component-query-error" class="form-error" aria-live="polite" hidden></p>
                     </div>
 
                     <div class="grid-4 gap-3">

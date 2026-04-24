@@ -595,6 +595,8 @@ a{
     margin-left: 0.25rem;
     color: var(--color-red-500);
 }
+
+
 .form-control
 {
     width: 100%;
@@ -611,6 +613,18 @@ a{
 {
     border-color: var(--color-blue-300);
     box-shadow: 0 0 0 2px var(--color-blue-100);
+}
+
+.form-field.is-invalid .search-container
+{
+    border-color: var(--color-red-500);
+    box-shadow: 0 0 0 2px var(--color-red-100);
+}
+.form-error
+{
+    color: var(--color-red-600);
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
 }
 
 
