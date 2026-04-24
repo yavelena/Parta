@@ -30,7 +30,6 @@ window.addEventListener('resize', () =>
     }
 });
 
-
 const ToggleButtons = document.querySelectorAll('.toggle-btn');
 
 ToggleButtons.forEach((button) =>
@@ -51,3 +50,18 @@ ToggleButtons.forEach((button) =>
         // grouped / exact
     });
 });
+
+
+// UTILITIES 
+
+function formatQuantity(value)
+{
+    const number = Number(value);
+
+    if (!Number.isFinite(number))
+    {
+        return 'N/A';
+    }
+
+    return new Intl.NumberFormat('en-US').format(number);
+}
