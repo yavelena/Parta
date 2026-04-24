@@ -220,15 +220,48 @@ The notes include project research, API planning, data model ideas, and implemen
 
 ## 9. Challenges & Solutions
 
-### Challenge: Connecting the frontend to live component data
+### Challenge: Connecting the frontend to real component data
 
 One of the biggest challenges was making the DigiKey search page work with real component data instead of only static mock data.
 
-The frontend needed to send a search request, wait for the API response, show a loading state, handle errors, and render the returned component data as cards.
+At first, the project used local JavaScript data for inventory pages, but the DigiKey search page required a real asynchronous workflow:
+
+- collect form data from the user
+- send a request from the frontend
+- connect the frontend to a backend API
+- connect the backend API to DigiKey
+- handle DigiKey API authentication
+- deploy the backend to Azure
+- handle loading, success, empty result, and error states on the frontend
+
+This was more complex than a normal static frontend feature because the page depended on several moving parts working together.
+
+The DigiKey API integration was especially challenging. I had to deal with API credentials, access configuration, request format, backend environment variables, deployment settings, and differences between local development and the deployed Azure environment. I also had to contact DigiKey support to resolve access/API-related issues before the integration could work properly.
 
 ### Solution
 
-I created a dedicated DigiKey search page and connected it to a deployed ASP.NET Core backend API using `fetch()`.
+I separated the problem into frontend and backend responsibilities.
+
+The frontend DigiKey page only handles the user interface:
+
+- reads the search form values
+- validates the search query
+- sends a `fetch()` request to my backend API
+- shows a loading spinner while waiting
+- renders returned component data as result cards
+- displays a no-results message when nothing is found
+- displays an error message when the request fails
+
+The backend handles the DigiKey-specific logic:
+
+- stores the DigiKey API configuration
+- sends the request to DigiKey
+- processes the response
+- returns simplified component data to the frontend
+
+This approach keeps the frontend cleaner and avoids exposing DigiKey credentials in browser code.
+
+After deploying the ASP.NET Core backend to Azure, the frontend was able to call a live API endpoint and display real DigiKey component data. This made the DigiKey search page feel much closer to a real production feature instead of a static demo.
 
 The page now handles several states:
 
@@ -238,15 +271,7 @@ The page now handles several states:
 - no results
 - API error
 
-This made the page feel more like a real production feature instead of a static demo.
-
-### Challenge: Custom form validation
-
-The assignment required client-side validation with custom error messaging, not only HTML5 `required`.
-
-### Solution
-
-I added JavaScript validation for the DigiKey search query field. The page checks that the query has at least 2 characters, displays a custom error message, and highlights the invalid field using CSS.
+This was the most difficult part of the project, but it also became the most valuable feature because it connects the frontend interface to real external component data.
 
 ## 10. Technologies Used
 
