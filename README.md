@@ -265,13 +265,13 @@ I added JavaScript validation for the DigiKey search query field. The page check
 Live site:
 
 ```text
-ADD_DEPLOYED_URL_HERE
+https://yavelena.github.io/Parta/index.html
 ```
 
 Repository:
 
 ```text
-ADD_GITHUB_REPOSITORY_URL_HERE
+https://github.com/yavelena/Parta
 ```
 
 ## 12. Project Status
