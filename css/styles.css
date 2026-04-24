@@ -164,6 +164,7 @@ h3{
 a{
     text-decoration: none;
     color: var(--color-blue-600);
+    cursor: pointer;
 }
 .accent-link{
     font-weight: var(--font-weight-medium);
@@ -997,14 +998,14 @@ main
     font-weight: var(--font-weight-medium);
 }
 
-.clear-filters-btn
+/* .clear-filters-btn
 {
     border: none;
     background: transparent;
     color: var(--color-blue-500);
     font-weight: var(--font-weight-semibold);
     cursor: pointer;
-}
+} */
 
 .table-part-name
 {
