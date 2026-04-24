@@ -164,6 +164,7 @@ h3{
 a{
     text-decoration: none;
     color: var(--color-blue-600);
+    cursor: pointer;
 }
 .accent-link{
     font-weight: var(--font-weight-medium);
@@ -317,6 +318,10 @@ a{
 }
 .full-width{
     width: 100%;
+}
+[hidden]
+{
+    display: none !important;
 }
 .hidden{
     display: none;
@@ -504,8 +509,8 @@ a{
 .active-badge,
 .badge-blue
 {
-    color: var(--color-blue-700);
     background: var(--color-blue-100);
+    color: var(--color-blue-700);
 }
 .badge-green
 {
@@ -602,7 +607,7 @@ a{
     outline: none;
 }
 .form-control:focus,
-.search-input:focus-within
+.search-container:focus-within
 {
     border-color: var(--color-blue-300);
     box-shadow: 0 0 0 2px var(--color-blue-100);
@@ -673,7 +678,8 @@ nav a{
     align-items: center;
     gap: var(--spacing-3);  /* 12px */;
     padding: var(--block-padding-base);
-    font-size: var(--text-sm);
+    font-size: var(--text-md);
+    line-height: var(--text-md--line-height);
 }
 nav a:hover{
     background: var(--color-slate-800);
@@ -992,14 +998,14 @@ main
     font-weight: var(--font-weight-medium);
 }
 
-.clear-filters-btn
+/* .clear-filters-btn
 {
     border: none;
     background: transparent;
     color: var(--color-blue-500);
     font-weight: var(--font-weight-semibold);
     cursor: pointer;
-}
+} */
 
 .table-part-name
 {

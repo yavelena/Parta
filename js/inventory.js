@@ -3,8 +3,8 @@ const DATA_URL = 'data/inventory.json';
 const searchInput = document.getElementById('inventory-search-input');
 const sortSelect = document.getElementById('sort-select');
 const tableBody = document.getElementById('inventory-table-body');
-const resultsCount = document.getElementById('filtered-results-cnt');
-const filterChips = document.getElementById('filter-chips');
+const resultsCount = document.getElementById('filtered-results-cnt-placeholder');
+const filterChips = document.getElementById('filter-chips-block');
 const clearFiltersBtn = document.getElementById('clear-filters-btn');
 
 let inventoryItems = [];
@@ -17,21 +17,6 @@ const state =
     inStock: true,
     sort: 'relevance'
 };
-
-function escapeHtml(value)
-{
-    return String(value)
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#039;');
-}
-
-function formatNumber(value)
-{
-    return new Intl.NumberFormat('en-US').format(value);
-}
 
 function getStatusBadgeClass(status)
 {
@@ -82,7 +67,7 @@ function renderTable(items)
                 </td>
                 <td>${escapeHtml(item.package)}</td>
                 <td class="text-500">${parametersHtml}</td>
-                <td class="text-900 font-semibold">${formatNumber(item.qty)}</td>
+                <td class="text-900 font-semibold">${formatQuantity(item.qty)}</td>
                 <td>
                     <span class="badge table-count-badge">${item.locations}</span>
                 </td>

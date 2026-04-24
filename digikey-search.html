@@ -131,6 +131,17 @@
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
         </symbol>
 
+        <!-- star -->
+        <symbol id="icon-star" viewBox="0 0 24 24">
+            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+        </symbol>
+        
+        <!-- successful search -->
+        <symbol id="icon-sberbank" viewBox="0 0 24 24">
+            <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+            <path d="m9 11 3 3L22 4"></path>
+        </symbol>
+
     </svg>
 
 
@@ -251,19 +262,19 @@
     
     <div class="flex-col gap-3">
 
-        <!-- SEARCH FORM  -->
+        <!-------------------- SERCH FORM --------------------->
         
-        <section id="digikey-search-panel" class="panel component-search-card">
+        <section id="digikey-search-panel" class="panel">
             
             <div class="panel-header">
                 <h2>Component Search</h2>
             </div>
 
             <div class="panel-body flex-col gap-4">
-                <form id="digikey-search-form" class="panel-body-section flex-col gap-4" action="#" method="get">
+                <form id="digikey-search-form" class="panel-body-section flex-col gap-4" action="#" method="get" >
                     
                     <div id="search-query-input-field" class="form-field">
-                        <label for="component-query" class="form-label">
+                        <label for="component-query-input" class="form-label">
                             Search Query 
                         </label>
 
@@ -272,7 +283,7 @@
                                 <use href="#icon-search"></use>
                             </svg>
                             <input
-                                id="component-query"
+                                id="component-query-input"
                                 name="query"
                                 type="text"
                                 placeholder="e.g. STM32F407VGT6, 10k 0402, Murata 0.1uF"
@@ -284,13 +295,13 @@
                     <div class="grid-4 gap-3">
                         
                         <div class="form-field">
-                            <label for="component-qty" class="form-label">Quantity</label>
-                            <input id="component-qty" name="quantity" class="form-control rounded-sm" type="number" min="1" value="1">
+                            <label for="component-qty-input" class="form-label">Quantity</label>
+                            <input id="component-qty-input" name="quantity" class="form-control rounded-sm" type="number" min="1" value="1">
                         </div>
 
                         <div class="form-field">
-                            <label for="component-site" class="form-label">Site</label>
-                            <select id="component-site" name="site" class="form-control rounded-sm">
+                            <label for="component-site-select" class="form-label">Site</label>
+                            <select id="component-site-select" name="site" class="form-control rounded-sm">
                                 <option value="US" selected>United States</option>
                                 <option value="CA">Canada</option>
                                 <option value="EU">Europe</option>
@@ -298,16 +309,16 @@
                         </div>
 
                         <div class="form-field">
-                            <label for="component-language" class="form-label">Language</label>
-                            <select id="component-language" name="language" class="form-control rounded-sm">
+                            <label for="component-language-select" class="form-label">Language</label>
+                            <select id="component-language-select" name="language" class="form-control rounded-sm">
                                 <option value="en" selected>English</option>
                                 <option value="fr">French</option>
                             </select>
                         </div>
 
                         <div class="form-field">
-                            <label for="component-currency" class="form-label">Currency</label>
-                            <select id="component-currency" name="currency" class="form-control rounded-sm">
+                            <label for="component-currency-select" class="form-label">Currency</label>
+                            <select id="component-currency-select" name="currency" class="form-control rounded-sm">
                                 <option value="USD" selected>USD ($)</option>
                                 <option value="CAD">CAD ($)</option>
                                 <option value="EUR">EUR (€)</option>
@@ -336,46 +347,62 @@
         <!-- END SEARCH FORM  -->
 
         
-        <!------------- SERCH WAITING SPINNER --------------------->
+        <!------------- SERCH LOADING SPINNER --------------------->
         
         <div 
-            id="digikey-loading"
-            class="info-panel panel-blue panel-body flex-row gap-4 is-loading" 
+            id="digikey-loading-block"
+            class="info-panel panel-blue panel-body flex-row gap-4" 
             role="status" 
             aria-live="polite"
+            hidden
         >
             <div class="info-panel-icon waiting_spinner" aria-hidden="true"></div>
 
             <div>
                 <p class="panel-title">Searching Digi-Key API</p>
                 <p class="text-xs">
-                    Please wait while we search for "<span id="loading-query-value">STM32F407VGT6</span>"...
+                    Please wait while we search for 
+                    "<span id="loading-search-string-value-placeholder"></span>"...
                 </p>
             </div>
         </div>
 
 
+        <!------------- SERCH LOADING ERROR --------------------->
+
+        <div 
+            id="digikey-loading-error-block" 
+            class="info-panel panel-body flex-row gap-4"
+            hidden
+        >
+            <svg class="icon-lg color-red" aria-hidden="true">
+                <use href="#icon-info"></use>
+            </svg>
+
+            <div>
+                <p class="panel-title">Search failed</p>
+                <p id="digikey-error-message-placeholder" class="text-sm">
+                    Something went wrong.
+                </p>
+            </div>
+        </div>
 
         <!------------- SERCH RESULTS HEADER --------------------->
         
-        <div id="search-result-header" class="flex-col gap-3">
+        <div id="search-result-header" class="flex-col gap-3" hidden>
 
             <div id="search-results-cnt-block" class="flex-row gap-2">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                        class="icon-lg color-green"
-                    >
-                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
-                        <path d="m9 11 3 3L22 4"></path>
+                    <svg class="icon-xl color-green" aria-hidden="true">
+                        <use href="#icon-sberbank"></use>
                     </svg> 
                     <p class="font-semibold">
-                        <span id="results-cnt-value">3</span> results found for <span id="search-string-value">"STM32F407VGT6"</span>
+                        <span id="search-results-cnt-value-placeholder">3</span> 
+                        results found for 
+                        "<span id="results-search-string-value-placeholder"></span>"
                     </p>
             </div>
             
-            <div id="search-results-filter-block" class="panel panel-body row-space-between wrap text-sm">
+            <div id="search-results-filter-block" class="panel panel-body row-space-between wrap text-sm" hidden>
                 
                 <div class="row-vertical-center wrap">
                     <span>Filters: </span>
@@ -401,21 +428,19 @@
             </div>
         </div>
                     
-        <!----------------- SERCH RESULTS  -------------------------->
+        <!----------------- SERCH RESULTS CONTAINER -------------------------->
 
-        <div id="digikey-search-results" class="flex-col gap-4">
-            
-            
-            
-
-        </div>         <!-- END SEARCH RESULTS  -->
+        <div 
+            id="digikey-search-results-block" 
+            class="flex-col gap-4"
+        ></div>         <!-- end search results -->
 
     </div>
     
 
     <aside class="flex-col gap-3">
 
-        <section class="panel">
+        <section class="panel text-sm">
             <div class="panel-header">
                 <h2>Search Tips</h2>
             </div>
@@ -484,7 +509,7 @@
 
     
 <script src="js/script.js"></script>
-<script src="js/inventory.js"></script>
+<script src="js/digikey-search.js"></script>
 
 </body>
 </html>

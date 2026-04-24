@@ -30,7 +30,6 @@ window.addEventListener('resize', () =>
     }
 });
 
-
 const ToggleButtons = document.querySelectorAll('.toggle-btn');
 
 ToggleButtons.forEach((button) =>
@@ -51,3 +50,29 @@ ToggleButtons.forEach((button) =>
         // grouped / exact
     });
 });
+
+
+/*=====================  Utility Functions ==========================*/
+
+function escapeHtml(value)
+{
+    return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+}
+
+
+function formatQuantity(value)
+{
+    const number = Number(value);
+
+    if (!Number.isFinite(number))
+    {
+        return 'N/A';
+    }
+
+    return new Intl.NumberFormat('en-US').format(number);
+}
